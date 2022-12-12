@@ -11,7 +11,7 @@ interface Car2 extends Car {
 class AutoMobile implements Car {
   brand: string;
   speed: number;
-  speedMethod(speed) {
+  speedMethod(speed: number) {
     console.log(speed);
   }
 }
@@ -24,5 +24,19 @@ const autoMobile2: Car2 = {
     console.log(speed);
   },
 };
+
 const carObject = new AutoMobile();
+
 carObject.speedMethod(50);
+
+class Tree {
+  constructor(public branch: string, private leaf: string) {
+    this.branch = branch;
+    this.leaf = leaf;
+  }
+  public mouseLeave() {
+    console.log(this.leaf);
+  }
+}
+
+const tree: Tree = new Tree("grean leaf", "root");
